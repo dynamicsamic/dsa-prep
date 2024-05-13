@@ -1,12 +1,12 @@
 # My 5-week Data Structures and Algorithms preparation curriculum
 
 #### Week 1. Basic data structures
-- [ ] Day 1. Arrays. Code implementation in Python. Solve 10 easy problems.
+- [ ] Day 1. Array. Code implementation in Python. Solve 10 easy problems.
 - [ ] Day 2. Stack and Queue on Array. Code implementation in Python. Solve 5 easy problems for each DS.
-- [ ] Day 3. Linked List (singly and doubly linked). Code implementation in Python. Solve 10 easy problems.
-- [ ] Day 4. Stack and Queue on Linked List. Code implementation in Python. Solve 5 easy problems for each DS.
-- [ ] Day 5. Revise, make Anki cards.
-- [ ] Day 6. Relax; revise; read about upcoming topics.
+- [ ] Day 3. Hash Table. Code implementation in Python. Solve 10 easy problems.
+- [ ] Day 4. Linked List (singly and doubly linked). Code implementation in Python. Solve 10 easy problems.
+- [ ] Day 5. Stack and Queue on Linked List. Code implementation in Python. Solve 5 easy problems for each DS.
+- [ ] Day 6. Revise, make Anki cards.
 - [ ] Day 7. Relax; revise; read about upcoming topics.
 
 #### Week 2. More advanced data structures
