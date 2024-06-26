@@ -1,7 +1,7 @@
 def is_palindrome(s: str) -> bool:
     """
     Leetcode. 125. Valid Palindrome
-    https://leetcode.com/problems/valid-palindrome//description
+    https://leetcode.com/problems/valid-palindrome/description
 
     -----------------------------Description-----------------------------------
     A phrase is a palindrome if, after converting all uppercase letters into
