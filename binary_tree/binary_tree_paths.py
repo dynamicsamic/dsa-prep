@@ -27,12 +27,12 @@ def tree_path(root: "TreeNode"):
     Base case 2: if we are at a leaf node it means that by this time we've
     already collected all nodes, so we add the collected path string to
     result array.
-    Recursive case: we concatenate the path string with a formatted node value 
-    and call recurse the left and right nodes. 
+    Recursive case: we concatenate the path string with a formatted node value
+    and call recurse the left and right nodes.
     """
     res = []
 
-    def preorder(node: TreeNode, path: str)-> None:
+    def preorder(node: TreeNode, path: str) -> None:
         if not node:
             return
         if not node.left and not node.right:
@@ -49,6 +49,38 @@ def tree_path(root: "TreeNode"):
     return res
 
 
+def tree_path_backtrack(root: "TreeNode") -> list[str]:
+    """
+    ------------------------------Algorithm------------------------------------
+    This algorithm is very similar to the previous one, but uses backtracking
+    for generating paths. We have a `path` array, which serves a container
+    or accumulator for values we've seen so far. On each function call we
+    either add a value to the path array or add path's contents to the
+    resulting array. We keep deleting the last value on every successfull
+    function call, thus preserving the unique paths combinations.
+    """
+    res = []
+
+    def backtrack(node: TreeNode, path: list[str]) -> None:
+        if not node:
+            return
+        if not node.left and not node.right:
+            path.append(str(node.val))
+            res.append("->".join(path))
+            path.pop()
+            return
+
+        path.append(str(node.val))
+
+        backtrack(node.left, path)
+        backtrack(node.right, path)
+
+        path.pop()
+
+    backtrack(root, [])
+    return res
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -60,9 +92,10 @@ t4 = TreeNode(5)
 t3 = TreeNode(3)
 t2 = TreeNode(2, right=t4)
 t1 = TreeNode(1, t2, t3)
-assert tree_path(t1) == ["1->2->5", "1->3"]
+
+assert tree_path(t1) == tree_path_backtrack(t1) == ["1->2->5", "1->3"]
 
 t0 = TreeNode(1)
-assert tree_path(t0) == ["1"]
+assert tree_path(t0) == tree_path_backtrack(t0) == ["1"]
 
 print("\nAll tests passed\n")
