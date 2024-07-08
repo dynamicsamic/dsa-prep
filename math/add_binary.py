@@ -73,3 +73,5 @@ assert add_binary_builtin("11", "1") == "100"
 assert add_binary_builtin("0", "1") == "1"
 assert add_binary_builtin("110", "1") == "111"
 assert add_binary_builtin("1010", "1011") == "10101"
+
+print("\nAll tests passed\n")
