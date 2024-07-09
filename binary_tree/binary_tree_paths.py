@@ -32,7 +32,7 @@ def tree_path(root: "TreeNode"):
     """
     res = []
 
-    def preorder(node: TreeNode, path: str) -> None:
+    def preorder(node: TreeNode| None, path: str) -> None:
         if not node:
             return
         if not node.left and not node.right:
@@ -61,7 +61,7 @@ def tree_path_backtrack(root: "TreeNode") -> list[str]:
     """
     res = []
 
-    def backtrack(node: TreeNode, path: list[str]) -> None:
+    def backtrack(node: TreeNode| None, path: list[str]) -> None:
         if not node:
             return
         if not node.left and not node.right:

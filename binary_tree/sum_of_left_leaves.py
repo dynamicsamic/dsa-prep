@@ -1,21 +1,4 @@
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-    def __repr__(self) -> str:
-        if self is None:
-            return str(None)
-        left = True if self.left else False
-        right = True if self.right else False
-        return (
-            f"{self.__class__.__name__}[val={self.val}, "
-            f"left={left} right={right}]"
-        )
-
-
-def sum_of_left_leaves(root: TreeNode, s: int = 0) -> int:
+def sum_of_left_leaves(root: "TreeNode", s: int = 0) -> int:
     """
     Leetcode. 404. Sum of Left Leaves
     https://leetcode.com/problems/sum-of-left-leaves/description
@@ -47,7 +30,7 @@ def sum_of_left_leaves(root: TreeNode, s: int = 0) -> int:
     on every found left leaf.
     """
 
-    def _sum_of_left_leaves(root: TreeNode) -> None:
+    def _sum_of_left_leaves(root: TreeNode | None) -> None:
         nonlocal s
 
         if not root:
@@ -64,6 +47,23 @@ def sum_of_left_leaves(root: TreeNode, s: int = 0) -> int:
     return s
 
 
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+    def __repr__(self) -> str:
+        if self is None:
+            return str(None)
+        left = True if self.left else False
+        right = True if self.right else False
+        return (
+            f"{self.__class__.__name__}[val={self.val}, "
+            f"left={left} right={right}]"
+        )
+
+
 t6 = TreeNode(7)
 t5 = TreeNode(15)
 t3 = TreeNode(20, t5, t6)
@@ -73,3 +73,5 @@ assert sum_of_left_leaves(t1) == 24
 
 t0 = TreeNode(1)
 assert sum_of_left_leaves(t0) == 0
+
+print("\nAll tests passed\n")
