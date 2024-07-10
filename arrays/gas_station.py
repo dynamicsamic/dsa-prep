@@ -15,8 +15,8 @@ def can_complete_circuit(gas: list[int], cost: list[int]) -> int:
 
     -----------------------------Constraints-----------------------------------
     : n == gas.length == cost.length
-    : 1 <= n <= 105
-    : 0 <= gas[i], cost[i] <= 104
+    : 1 <= n <= 10**5
+    : 0 <= gas[i], cost[i] <= 10**4
 
     ------------------------------Examples-------------------------------------
     Example 1:
@@ -28,7 +28,8 @@ def can_complete_circuit(gas: list[int], cost: list[int]) -> int:
     Travel to station 0. Your tank = 8 - 2 + 1 = 7
     Travel to station 1. Your tank = 7 - 3 + 2 = 6
     Travel to station 2. Your tank = 6 - 4 + 3 = 5
-    Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.
+    Travel to station 3. The cost is 5. Your gas is just enough to travel 
+    back to station 3.
     Therefore, return 3 as the starting index.
 
     Example 2:
@@ -55,12 +56,8 @@ def can_complete_circuit(gas: list[int], cost: list[int]) -> int:
     """
 
     length = len(gas)
-    total_gas = 0
-    total_cost = 0
-
-    for j in range(length):
-        total_gas += gas[j]
-        total_cost += cost[j]
+    total_gas = sum(gas)
+    total_cost = sum(cost)
 
     if total_gas < total_cost:
         return -1

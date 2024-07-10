@@ -8,8 +8,8 @@ def max_subarray(nums: list[int]) -> int:
     return its sum.
 
     -----------------------------Constraints-----------------------------------
-    : 1 <= nums.length <= 105
-    : -104 <= nums[i] <= 104
+    : 1 <= nums.length <= 10**5
+    : -10**4 <= nums[i] <= 10**4
 
     ------------------------------Examples-------------------------------------
     Example 1:
@@ -32,7 +32,7 @@ def max_subarray(nums: list[int]) -> int:
     current sum and check it against max_sum. If current sum turned negative
     we kind of invalidate to zero. We do this because negative current sum will
     surely decrease any of potential subarray sum. Since we don't want this to
-    happen, we simply get rid of this extra weight.
+    happen, we simply get rid of this dead weight.
     """
     max_sum = float("-inf")
     current_sum = 0
