@@ -71,7 +71,7 @@ class LinkedList:
 
         return current_node
 
-    def search(self, value: Any) -> int:
+    def search(self, value: Any) -> int | None:
         i = 0
         current_node = self.head
 

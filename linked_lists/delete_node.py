@@ -38,6 +38,7 @@ become 4 -> 5 -> 9 after calling your function.
 
 def delete_node(node: "ListNode") -> None:
     """
+    ------------------------------Algorithm------------------------------------
     Copy next node's value to current node, replace current node's next
     pointer by its next's next pointer. Simple and efficient.
     """
@@ -47,6 +48,7 @@ def delete_node(node: "ListNode") -> None:
 
 def delete_node2(node: "ListNode") -> None:
     """
+    ------------------------------Algorithm------------------------------------
     Traverse through nodes and stop before the last valid node.
     On each step copy next node's value to current node, replace current
     node's next pointer by its next's next pointer. After traversing handle
